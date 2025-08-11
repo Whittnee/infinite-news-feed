@@ -5,7 +5,7 @@ import App from "./app/app";
 import { ConfigProvider } from "antd";
 import { Provider } from "react-redux";
 import { store } from "@/entities/store";
-import './variables.scss'
+import "./variables.scss";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

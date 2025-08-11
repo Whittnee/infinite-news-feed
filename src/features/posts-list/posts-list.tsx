@@ -1,8 +1,17 @@
 import { fetchPostsThunk } from "@/entities/posts/model/postsSlice";
 import { useDispatch, useSelector } from "@/entities/store";
-import { Card, Empty, List, Skeleton, Space, Tag, Typography, App as AntApp } from "antd";
+import {
+  Card,
+  Empty,
+  List,
+  Skeleton,
+  Space,
+  Tag,
+  Typography,
+  App as AntApp,
+} from "antd";
 import { useEffect, useRef, type FC } from "react";
-import styles from "./styles.module.scss"
+import styles from "./styles.module.scss";
 
 export const PostsList: FC = () => {
   const dispatch = useDispatch();
@@ -14,12 +23,12 @@ export const PostsList: FC = () => {
     if (items.length === 0) dispatch(fetchPostsThunk(0));
   }, [dispatch, items]);
 
-   useEffect(() => {
+  useEffect(() => {
     if (error) message.error(error);
   }, [error, message]);
 
   useEffect(() => {
-    if (!hasMore) return; 
+    if (!hasMore) return;
 
     const el = sentinelRef.current;
     if (!el) return;
@@ -74,11 +83,9 @@ export const PostsList: FC = () => {
         )}
       />
 
-      {hasMore && (
-        <div ref={sentinelRef} style={{ height: 1 }} />
-      )}
+      {hasMore && <div ref={sentinelRef} style={{ height: 1 }} />}
 
-      {status === 'loading' && (
+      {status === "loading" && (
         <div style={{ paddingTop: 12 }}>
           {Array.from({ length: 3 }).map((_, i) => (
             <Card key={i} style={{ marginBottom: 12 }}>

@@ -1,6 +1,6 @@
 ## 🛠️ Технологии 
 
-- React, TypeScript, Redux Toolkit, SCSS, Ant Design Vite 
+- React, TypeScript, Redux Toolkit, SCSS, Ant Design, Vite 
 
 ## 🚀 Инструкция по запуску
 
